@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,7 +11,10 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.indigo,
         appBar: AppBar(
-          title: Text('Counter'),
+          title: Text(
+            'Counter',
+            style: TextStyle(color: Colors.indigo[200]),
+          ),
           centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0.0,
