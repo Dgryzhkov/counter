@@ -37,32 +37,61 @@ class _CounterWidgetsState extends State<CounterWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.indigo[200], borderRadius: BorderRadius.circular(20)),
-        //width: 150,
-        //padding: EdgeInsets.all(50),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            IconButton(
-                onPressed: () {
-                  setState(() {
-                    _count--;
-                  });
-                },
-                icon: const Icon(Icons.remove)),
-            Text('$_count'),
-            IconButton(
-                onPressed: () {
-                  setState(() {
-                    _count++;
-                  });
-                },
-                icon: const Icon(Icons.add)),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Tap \"-\" to decrement',
+            style: TextStyle(
+              color: Colors.indigo[200],
+              fontSize: 15,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            decoration: BoxDecoration(
+                color: Colors.indigo[200],
+                borderRadius: BorderRadius.circular(10)),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _count--;
+                    });
+                  },
+                  icon: const Icon(Icons.remove),
+                ),
+                Text(
+                  '$_count',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _count++;
+                    });
+                  },
+                  icon: const Icon(Icons.add),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'Tap \"+\" to increment',
+            style: TextStyle(
+              color: Colors.indigo[200],
+              fontSize: 15,
+            ),
+          ),
+        ],
       ),
     );
   }
